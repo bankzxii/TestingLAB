@@ -1,5 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
+const math = require('./math');
 
 describe('test-chai' , ()=>{
     it('should compare somethings by expect', ()=>{
@@ -19,5 +20,16 @@ describe('test-chai' , ()=>{
         expect(undefined).to.not.exist;
         expect(1).to.exist;
 
+    });
+});
+
+describe('Math Module', ()=>{
+    context('function add1',()=>{
+        it('ควรส่งค่ากลับเป็นตัวเลข',()=>{
+            expect(math.add1(1,1)).to.be.a('number');
+        });
+        it('add(1,1) ควรส่งค่ามาเป็น 2',()=>{
+            expect(math.add1(1,1)).to.equal(2);
+        });
     });
 });
